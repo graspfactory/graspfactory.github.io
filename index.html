@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-    content="Large object centric grasping dataset for industrial grasping applications.">
+  <meta name="description" content="Large object centric grasping dataset for industrial grasping applications.">
   <meta name="keywords" content="Robot grasp, Object-Centric Dataset, ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GraspFactory: A Large Object-Centric Grasping Dataset</title>
@@ -38,6 +37,14 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <!-- Bulma Carousel CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/css/bulma-carousel.min.css">
+
+  <!-- Bulma Carousel JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
 </head>
 
 <body>
@@ -52,177 +59,385 @@
             <div class="is-size-3 publication-conference">
               <em>Accepted to 2025 CoRL Data Workshop</strong></em>
 
-            <!-- Authors -->
-            <div class="is-size-4 publication-authors">
-              <span class="author-block">
-                <a href="https://srinidhibharadwaj.github.io">Srinidhi Kalgundi Srinivas</a><sup>†</sup>,
-              </span>
-              <span class="author-block">
-                Yash Shukla<sup>‡§</sup>,
-              </span>
-              <span class="author-block">
-                Adam Arnold<sup>†</sup>,
-              </span>
-              <span class="author-block">
-                Sachin Chitta<sup>†</sup>
-              </span>
-            </div>
-
-            <!-- Affiliations -->
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>†</sup>Autodesk Research</span>
-              <span class="author-block"><sup>‡</sup>Berkshire Grey</span>
-            </div>
-
-            <!-- Intern note -->
-            <div class="is-size-7 publication-authors">
-              <span class="author-block"><sup>§</sup>Work done as an intern at Autodesk Research</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-
-                <!-- Paper Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
+              <!-- Authors -->
+              <div class="is-size-4 publication-authors">
+                <span class="author-block">
+                  <a href="https://srinidhibharadwaj.github.io">Srinidhi Kalgundi Srinivas</a><sup>†</sup>,
                 </span>
-          
-                <!-- Video Link. -->
-                <span class="link-block">
-                  <a href="https://www.youtube.com/watch?v=Gs67-cjiTpc"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                    </span>
-                    <span>Video</span>
-                  </a>
+                <span class="author-block">
+                  Yash Shukla<sup>‡§</sup>,
                 </span>
+                <span class="author-block">
+                  Adam Arnold<sup>†</sup>,
+                </span>
+                <span class="author-block">
+                  Sachin Chitta<sup>†</sup>
+                </span>
+              </div>
 
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <!-- Dataset Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data</span>
-                  </a>
+              <!-- Affiliations -->
+              <div class="is-size-6 publication-authors">
+                <span class="author-block"><sup>†</sup>Autodesk Research,</span>
+                <span class="author-block"><sup>‡</sup>Berkshire Grey</span>
+              </div>
+
+              <!-- Intern note -->
+              <div class="is-size-7 publication-authors">
+                <span class="author-block"><sup>§</sup>Work done as an intern at Autodesk Research</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+
+                  <!-- Paper Link. -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2011.12948"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="https://www.youtube.com/watch?v=Gs67-cjiTpc"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/google/nerfies"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="far fa-images"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Add the ./static/images/objects-in-dataset.png image and center it -->
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <figure class="image"></figure>
+      <img src="./static/images/objects-in-dataset.png" alt="Objects in GraspFactory">
+      </figure>
+    </div>
+
+
+    <!-- ================= Abstract Section ================= -->
+    <section class="section" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Robotic grasping is a crucial task in industrial automation, where robots are increasingly expected to
+                handle a wide range of objects. However, a significant challenge arises when robot grasping models
+                trained
+                on limited datasets encounter novel objects. In real-world environments such as warehouses or
+                manufacturing plants, the diversity of objects can be vast, and grasping models need to generalize to
+                this
+                diversity. Training large, generalizable robot-grasping models requires geometrically diverse datasets.
+                In
+                this paper, we introduce GraspFactory, a dataset containing over 109 million 6-DoF grasps collectively
+                for
+                the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects). GraspFactory is
+                designed for training data-intensive models, and we demonstrate the generalization capabilities of one
+                such model trained on a subset of GraspFactory in both simulated and real-world settings. We aim to make
+                the dataset publicly available after review.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Dataset Statistics Section ================= -->
+    <section class="section" id="dataset-stats">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Dataset Statistics</h2>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Gripper</th>
+                    <th># of Objects</th>
+                    <th># of Good Grasps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Franka Panda</td>
+                    <td>14,690</td>
+                    <td>12.2 million</td>
+                  </tr>
+                  <tr>
+                    <td>Robotiq 2F85</td>
+                    <td>33,710</td>
+                    <td>97.1 million</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Real World Experiments Section ================= -->
+    <section class="section" id="real-world-experiments">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Real World Experiments</h2>
+        <div class="columns is-vcentered">
+
+          <!-- Column 1: Image -->
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/perception-pipeline.png" alt="Experiment Illustration">
+              <figcaption class="has-text-centered mt-2">
+                <em>Overview of the perception pipeline for real-world experiments.</em>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Column 2: Carousel -->
+          <div class="column is-half">
+            <div id="results-carousel" class="carousel results-carousel">
+
+              <!-- Base poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/base-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/base-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/base-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Blue wheel poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/blue-wheel-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/blue-wheel-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/blue-wheel-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Elbow poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/elbow-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/elbow-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/elbow-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Gear poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/gear-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/gear-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/gear-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Hanger poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/hanger-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/hanger-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/hanger-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Kingpin-bolt poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/kingpin-bolt-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/kingpin-bolt-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/kingpin-bolt-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Regrasp-fixture poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/regrasp-fixture-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/regrasp-fixture-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/regrasp-fixture-pose-3_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Strut poses -->
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/strut-pose-1_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/strut-pose-2_8x.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay muted loop playsinline controls>
+                  <source src="./static/videos/strut-pose-3_8x.mp4" type="video/mp4">
+                </video>
               </div>
 
             </div>
+           <figcaption class="has-text-centered mt-3">
+          Real-world grasping experiments demonstrating various objects and gripper poses.
+        </figcaption>
+          </div>
+         
+      </div>
+        </div>
+        
+    </section>
+
+    <!-- ================= Paper Video Section ================= -->
+    <section class="section" id="paper-video">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+            <div class="publication-video">
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/Gs67-cjiTpc" frameborder="0"
+                allow="autoplay; encrypted-media; clipboard-write; fullscreen" allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/teaser.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-          free-viewpoint
-          portraits.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="hero is-light is-small">
-
-  </section>
+    <!-- ================= Bulma Carousel ================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/css/bulma-carousel.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        bulmaCarousel.attach('#results-carousel', {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          infinite: true,
+          autoplay: false,
+          pauseOnHover: true
+        });
+      });
+    </script>
 
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Robotic grasping is a crucial task in industrial automation, where robots are increasingly expected to
-              handle a wide range of objects. However, a significant challenge arises when robot grasping models trained
-              on limited datasets encounter novel objects. In real-world environments such as warehouses or
-              manufacturing plants, the diversity of objects can be vast, and grasping models need to generalize to this
-              diversity. Training large, generalizable robot-grasping models requires geometrically diverse datasets. In
-              this paper, we introduce GraspFactory, a dataset containing over 109 million 6-DoF grasps collectively for
-              the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects). GraspFactory is
-              designed for training data-intensive models, and we demonstrate the generalization capabilities of one
-              such model trained on a subset of GraspFactory in both simulated and real-world settings. We aim to make
-              the dataset publicly available after review.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!--/ Abstract. -->
-
-      <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/watch?v=Gs67-cjiTpc" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <!--/ Paper video. -->
-    </div>
 
 
 
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+        <pre><code>
+        @misc{graspfactory2025,
+        author    = {Srinidhi Kalgundi Srinivas and Yash Shukla and Adam Arnold and Sachin Chitta},
+        title     = {GraspFactory: A Large Object-Centric Grasping Dataset},
+        howpublished = {CoRLq Workshop 2025},
+        note      = {Non-archived workshop, URL: \url{https://sites.google.com/stanford.edu/corldata25/home}},
+        year      = {2025}
+      }
+        </code></pre>
       </div>
     </section>
 
 
-    <footer class="footer">
+    <footer class="footer has-text-centered">
       <div class="container">
-        <!-- <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
-        <div class="content has-text-centered">
-          <div class="content">
-            <p>
-              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies.</a>
-            </p>
-          </div>
-        </div>
+        <p>
+          Website template borrowed from
+          <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">NeRFies</a>.
+        </p>
       </div>
     </footer>
+
 
 </body>
 
