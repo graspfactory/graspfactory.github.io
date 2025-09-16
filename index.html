@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/robot-person.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -65,20 +65,19 @@
                   <a href="https://srinidhibharadwaj.github.io">Srinidhi Kalgundi Srinivas</a><sup>†</sup>,
                 </span>
                 <span class="author-block">
-                  Yash Shukla<sup>‡§</sup>,
+                  <a href=" https://yshukla.com/">Yash Shukla</a><sup>§</sup>,
                 </span>
                 <span class="author-block">
                   Adam Arnold<sup>†</sup>,
                 </span>
                 <span class="author-block">
-                  Sachin Chitta<sup>†</sup>
+                  <a href="https://www.sachinchitta.com/">Sachin Chitta</a><sup>†</sup>
                 </span>
               </div>
 
               <!-- Affiliations -->
               <div class="is-size-6 publication-authors">
                 <span class="author-block"><sup>†</sup>Autodesk Research,</span>
-                <span class="author-block"><sup>‡</sup>Berkshire Grey</span>
               </div>
 
               <!-- Intern note -->
@@ -86,13 +85,20 @@
                 <span class="author-block"><sup>§</sup>Work done as an intern at Autodesk Research</span>
               </div>
 
+              <!-- Add ./static/images/autodesk-logo.svg-->
+              <div class="is-size-1 publication-authors"
+                style="display: flex; justify-content: center; align-items: center; height: 100%; margin: 2rem 0;">
+                <figure class="image is-192x192">
+                  <img src="./static/images/autodesk-logo.svg" alt="Autodesk Logo">
+                </figure>
+              </div>
+
               <div class="column has-text-centered">
                 <div class="publication-links">
 
                   <!-- Paper Link. -->
                   <span class="link-block">
-                    <a href=""
-                      class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
@@ -113,8 +119,7 @@
 
                   <!-- Code Link. -->
                   <span class="link-block">
-                    <a href=""
-                      class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
@@ -123,8 +128,7 @@
                   </span>
                   <!-- Dataset Link. -->
                   <span class="link-block">
-                    <a href=""
-                      class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="far fa-images"></i>
                       </span>
@@ -210,6 +214,26 @@
         </div>
       </div>
     </section>
+
+    <!-- ================= Results of SE3-DiffusionFields trained on GraspFactory ================= -->
+    <!-- Add ./static/images/simulation-results.png image and center it  -->
+    <section class="section" id="paper-video">
+      <div class="container is-fluid">
+        <div class="columns is-centered">
+          <div class="column is-full has-text-centered">
+            <h2 class="title is-3">Diffusion Video [Better title to be added]</h2>
+            <div class="publication-video" style="width: 75%; margin: 0 auto;">
+              <video autoplay loop muted playsinline style="width: 100%; height: auto; max-width: 1200px;">
+                <source src="./static/videos/se3_diffusion.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- ================= Real World Experiments Section ================= -->
     <section class="section" id="real-world-experiments">
@@ -368,14 +392,14 @@
               </div>
 
             </div>
-           <figcaption class="has-text-centered mt-3">
-          Real-world grasping experiments demonstrating various objects and gripper poses.
-        </figcaption>
+            <figcaption class="has-text-centered mt-3">
+              Real-world grasping experiments demonstrating various objects and gripper poses.
+            </figcaption>
           </div>
-         
-      </div>
+
         </div>
-        
+      </div>
+
     </section>
 
     <!-- ================= Paper Video Section ================= -->
