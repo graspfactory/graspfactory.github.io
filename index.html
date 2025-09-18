@@ -87,9 +87,9 @@
 
               <!-- Add ./static/images/autodesk-logo.svg-->
               <div class="is-size-1 publication-authors"
-                  style="display: flex; justify-content: center; align-items: center; height: 100%; margin: 2rem 0;">
-                <a href="https://www.research.autodesk.com/research-areas/science/robotics/"
-                  target="_blank" rel="noopener noreferrer" class="logo-link">
+                style="display: flex; justify-content: center; align-items: center; height: 100%; margin: 2rem 0;">
+                <a href="https://www.research.autodesk.com/research-areas/science/robotics/" target="_blank"
+                  rel="noopener noreferrer" class="logo-link">
                   <figure class="image is-192x192">
                     <img src="./static/images/robotics-logo.svg" alt="Autodesk Logo">
                   </figure>
@@ -139,22 +139,70 @@
                     </a>
                 </div>
 
+
+
               </div>
             </div>
+            <p><em style="color: #555;">* Dataset and code coming soon…</em></p>
           </div>
         </div>
       </div>
   </section>
 
-  <!-- Add the ./static/images/objects-in-dataset.png image and center it -->
+
+
+  <!-- ================= Objects in GraspFactory ================= -->
   <section class="section">
     <div class="container is-max-desktop has-text-centered">
       <figure class="image"></figure>
       <img src="./static/images/objects-in-dataset.png" alt="Objects in GraspFactory">
       </figure>
+      <figcaption class="has-text-centered mt-5">
+        A subset of objects in GraspFactory showcasing the diversity of object shapes and sizes.
+      </figcaption>
     </div>
-    
-     <!-- ================= Real World Experiments Section ================= -->
+
+<section class="section" id="interactive-grasps">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Interactive Grasp Viewer</h2>
+
+    <!-- Dropdown to select object -->
+    <div class="field has-addons has-addons-centered mb-4">
+      <div class="control">
+        <div class="select">
+          <select id="mesh-selector">
+            <option value="">Select an object</option>
+            <option value="00216092_79b3a1b3459041336d3aec78_step_000_0000">Object 1</option>
+            <option value="00370036_c70fe7123142787fdc372400_step_037_0004">Object 2</option>
+            <option value="00375301_49c08c635f2d7a25b6bdf898_step_001_0001">Object 3</option>
+            <option value="00442854_5877bd4e5a794d10bcd2aa2c_step_000_0004">Object 4</option>
+            <option value="00803018_a8df38c7fe15a2d6c522d65d_step_000_0000">Object 5</option>
+            <option value="00897787_c5f559cb04c19358f5cfdd6b_step_000_0009">Object 6</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viewer -->
+    <div id="grasp-viewer" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+
+    <p class="has-text-centered mt-2">
+      Example objects from the dataset along with their successful grasps (only 25 shown). 
+      Use your mouse or touch to rotate, zoom, and pan the scene. Green markers indicate successful grasps.
+    </p>
+  </div>
+</section>
+
+<!-- Three.js and GLTF loader -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/loaders/GLTFLoader.js"></script>
+
+
+<script src="./static/js/grasp-viewer.js"></script>
+
+
+    <!-- ================= Real World Experiments Section ================= -->
     <section class="section" id="real-world-experiments">
       <div class="container">
         <h2 class="title is-3 has-text-centered">Real World Experiments</h2>
@@ -332,17 +380,14 @@
               <p>
                 Robotic grasping is a crucial task in industrial automation, where robots are increasingly expected to
                 handle a wide range of objects. However, a significant challenge arises when robot grasping models
-                trained
-                on limited datasets encounter novel objects. In real-world environments such as warehouses or
+                trained on limited datasets encounter novel objects. In real-world environments such as warehouses or
                 manufacturing plants, the diversity of objects can be vast, and grasping models need to generalize to
-                this
-                diversity. Training large, generalizable robot-grasping models requires geometrically diverse datasets.
-                In
-                this paper, we introduce GraspFactory, a dataset containing over 109 million 6-DoF grasps collectively
-                for
-                the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects). GraspFactory is
-                designed for training data-intensive models, and we demonstrate the generalization capabilities of one
-                such model trained on a subset of GraspFactory in both simulated and real-world settings. 
+                this diversity. Training large, generalizable robot-grasping models requires geometrically diverse
+                datasets. In this paper, we introduce GraspFactory, a dataset containing over 109 million 6-DoF grasps
+                collectively for the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects).
+                GraspFactory is designed for training data-intensive models, and we demonstrate the generalization
+                capabilities of one such model trained on a subset of GraspFactory in both simulated and real-world
+                settings.
               </p>
             </div>
           </div>
@@ -384,6 +429,7 @@
       </div>
     </section>
 
+
     <!-- ================= Results of SE3-DiffusionFields trained on GraspFactory ================= -->
     <!-- Add ./static/images/simulation-results.png image and center it  -->
     <section class="section py-4" id="Diffusion-video">
@@ -392,7 +438,8 @@
           <div class="column is-full has-text-centered">
             <h2 class="title is-3">Diffusion Process Generating Grasps</h2>
             <div class="publication-video" style="width: 75%; margin: 0 auto;">
-              <video autoplay loop muted playsinline style="width: 100%; height: auto; max-width: 1200px; border: 3px solid #ccc; border-radius: 8px;">
+              <video autoplay loop muted playsinline
+                style="width: 100%; height: auto; max-width: 1200px; border: 3px solid #ccc; border-radius: 8px;">
 
                 <source src="./static/videos/se3_diffusion.mp4" type="video/mp4">
                 Your browser does not support the video tag.
