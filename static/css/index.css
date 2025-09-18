@@ -155,3 +155,13 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.logo-link img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo-link:hover img {
+  transform: scale(1.05); /* slight zoom */
+  opacity: 0.9;           /* subtle fade */
+  cursor: pointer;        /* hand cursor */
+}
