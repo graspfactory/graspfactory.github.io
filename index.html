@@ -57,7 +57,7 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">GraspFactory: A Large Object-Centric Grasping Dataset</h1>
             <div class="is-size-3 publication-conference">
-              <em>Accepted to 2025 CoRL Data Workshop</strong></em>
+              <span>Accepted to 2025 CoRL Data Workshop</strong></span>
 
               <!-- Authors -->
               <div class="is-size-4 publication-authors">
@@ -85,16 +85,17 @@
                 <span class="author-block"><sup>§</sup>Work done as an intern at Autodesk Research</span>
               </div>
 
-              <!-- Add ./static/images/autodesk-logo.svg-->
-              <div class="is-size-1 publication-authors"
-                style="display: flex; justify-content: center; align-items: center; height: 100%; margin: 2rem 0;">
-                <a href="https://www.research.autodesk.com/research-areas/science/robotics/" target="_blank"
-                  rel="noopener noreferrer" class="logo-link">
-                  <figure class="image is-192x192">
-                    <img src="./static/images/robotics-logo.svg" alt="Autodesk Logo">
-                  </figure>
-                </a>
-              </div>
+          <div class="publication-authors" 
+              style="display: flex; justify-content: center; align-items: center; margin: 2rem 0;">
+            <a href="https://www.research.autodesk.com/research-areas/science/robotics/" 
+              target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+              <figure style="margin: 0; width: 300px; display: flex; justify-content: center; align-items: center;">
+                <img src="./static/images/robotics-logo.png" 
+                    alt="Autodesk Logo" 
+                    style="width: 100%; height: auto; display: block;">
+              </figure>
+            </a>
+          </div>
 
               <div class="column has-text-centered">
                 <div class="publication-links">
@@ -143,7 +144,8 @@
 
               </div>
             </div>
-            <p><em style="color: #555;">* Dataset and code coming soon…</em></p>
+            <p><span style="color: #555;">* Dataset and code coming soon…</span></p>
+
           </div>
         </div>
       </div>
@@ -157,69 +159,121 @@
       <figure class="image"></figure>
       <img src="./static/images/objects-in-dataset.png" alt="Objects in GraspFactory">
       </figure>
-      <figcaption class="has-text-centered mt-5">
-        A subset of objects in GraspFactory showcasing the diversity of object shapes and sizes.
-      </figcaption>
+      <!-- <figcaption class="has-text-centered mt-5">
+        GraspFactory: A subset of objects in our dataset showing the diversity of object shapes and sizes.
+      </figcaption> -->
     </div>
 
-<section class="section" id="interactive-grasps">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Interactive Grasp Viewer</h2>
-
-    <!-- Dropdown to select object -->
-    <div class="field has-addons has-addons-centered mb-4">
-      <div class="control">
-        <div class="select">
-          <select id="mesh-selector">
-            <option value="">Select an object</option>
-            <option value="00216092_79b3a1b3459041336d3aec78_step_000_0000">Object 1</option>
-            <option value="00370036_c70fe7123142787fdc372400_step_037_0004">Object 2</option>
-            <option value="00375301_49c08c635f2d7a25b6bdf898_step_001_0001">Object 3</option>
-            <option value="00442854_5877bd4e5a794d10bcd2aa2c_step_000_0004">Object 4</option>
-            <option value="00803018_a8df38c7fe15a2d6c522d65d_step_000_0000">Object 5</option>
-            <option value="00897787_c5f559cb04c19358f5cfdd6b_step_000_0009">Object 6</option>
-          </select>
+    <!-- ================= Abstract Section ================= -->
+    <section class="section" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3"></h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce GraspFactory, a dataset containing over 109 million two-fingered 6-DoF grasps
+                collectively for the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects).
+                GraspFactory is designed for training data-intensive models, and we demonstrate the generalization
+                capabilities of a model trained on the Franka Panda subset of GraspFactory in both simulated and
+                real-world
+                settings.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Viewer -->
-    <div id="grasp-viewer" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+    <!-- ================= Dataset Statistics Section ================= -->
+    <section class="section" id="dataset-stats">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Dataset Statistics</h2>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Gripper</th>
+                    <th># of Objects</th>
+                    <th># of Good Grasps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Franka Panda</td>
+                    <td>14,690</td>
+                    <td>12.2 million</td>
+                  </tr>
+                  <tr>
+                    <td>Robotiq 2F-85</td>
+                    <td>33,710</td>
+                    <td>97.1 million</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <p class="has-text-centered mt-2">
-      Example objects from the dataset along with their successful grasps (only 25 shown). 
-      Use your mouse or touch to rotate, zoom, and pan the scene. Green markers indicate successful grasps.
-    </p>
-  </div>
-</section>
+    <!-- ================= Interactive Grasp Viewer Section ================= -->
+    <section class="section" id="interactive-grasps">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Interactive Grasp Viewer</h2>
 
-<!-- Three.js and GLTF loader -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/loaders/GLTFLoader.js"></script>
+        <!-- Dropdown to select object -->
+        <div class="field has-addons has-addons-centered mb-4">
+          <div class="control">
+            <div class="select">
+              <select id="mesh-selector">
+                <option value="">Select an object</option>
+                <option value="00216092_79b3a1b3459041336d3aec78_step_000_0000" selected>Object 1</option>
+                <option value="00370036_c70fe7123142787fdc372400_step_037_0004">Object 2</option>
+                <option value="00375301_49c08c635f2d7a25b6bdf898_step_001_0001">Object 3</option>
+                <option value="00442854_5877bd4e5a794d10bcd2aa2c_step_000_0004">Object 4</option>
+                <option value="00803018_a8df38c7fe15a2d6c522d65d_step_000_0000">Object 5</option>
+                <option value="00897787_c5f559cb04c19358f5cfdd6b_step_000_0009">Object 6</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Viewer -->
+        <div id="grasp-viewer" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+
+        <p class="has-text-centered mt-2">
+          Example objects from the dataset along with their successful grasps (only 25 shown) for the Robotiq 2F-85
+          gripper.
+          Use your mouse or touch to rotate, zoom, and pan the scene. Green markers indicate successful grasps.
+        </p>
+      </div>
+    </section>
+
+    <!-- Three.js and GLTF loader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/loaders/GLTFLoader.js"></script>
 
 
-<script src="./static/js/grasp-viewer.js"></script>
+    <script src="./static/js/grasp-viewer.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        loadGLB("00216092_79b3a1b3459041336d3aec78_step_000_0000");
+      });
+    </script>
 
 
     <!-- ================= Real World Experiments Section ================= -->
     <section class="section" id="real-world-experiments">
       <div class="container">
         <h2 class="title is-3 has-text-centered">Real World Experiments</h2>
-        <div class="columns is-vcentered">
+        <div class="columns is-centered">
 
-          <!-- Column 1: Image -->
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/perception-pipeline.png" alt="Experiment Illustration">
-              <figcaption class="has-text-centered mt-2">
-                <em>Overview of the perception pipeline for real-world experiments.</em>
-              </figcaption>
-            </figure>
-          </div>
-
-          <!-- Column 2: Carousel -->
-          <div class="column is-half">
+          <div class="column is-10">
             <div id="results-carousel" class="carousel results-carousel">
 
               <!-- Blue wheel poses -->
@@ -359,8 +413,23 @@
               </div>
 
             </div>
-            <figcaption class="has-text-centered mt-3">
-              Real-world grasping experiments demonstrating various objects and gripper poses.
+            <figcaption class="content mt-3"
+              style="max-width: 75%; margin: 0 auto; text-align: justify; line-height: 1.6;">
+              Real-world grasping experiments demonstrating various objects and gripper poses. The objects shown here were
+              not included in the training set. The SE3-DiffusionFields [1] model was trained on the Franka Panda subset
+              of GraspFactory and evaluated on a Robotiq 2F-85 gripper. We employ the perception pipeline described in
+              the following section to estimate object poses from a single-view RGB-D image. CNOS [2] is used to segment
+              the target object from the RGB image, and FoundationPose [3] estimates its 6-DoF pose. Grasps that collide
+              with the table are subsequently filtered out.
+
+              <p>
+                We evaluate real-world feasibility to evaluate whether grasps generated by the model
+                trained on GraspFactory can be used reliably to pick up an object without colliding with the object or
+                the surrounding objects, such as the table. We also evaluate grasp robustness measures the consistency
+                of a
+                grasp across repeated trials, highlighting its ability to maintain performance under minor uncertainty
+                introduced by perception.
+              </p>
             </figcaption>
           </div>
 
@@ -369,65 +438,23 @@
 
     </section>
 
-
-    <!-- ================= Abstract Section ================= -->
-    <section class="section" id="abstract">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Robotic grasping is a crucial task in industrial automation, where robots are increasingly expected to
-                handle a wide range of objects. However, a significant challenge arises when robot grasping models
-                trained on limited datasets encounter novel objects. In real-world environments such as warehouses or
-                manufacturing plants, the diversity of objects can be vast, and grasping models need to generalize to
-                this diversity. Training large, generalizable robot-grasping models requires geometrically diverse
-                datasets. In this paper, we introduce GraspFactory, a dataset containing over 109 million 6-DoF grasps
-                collectively for the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects).
-                GraspFactory is designed for training data-intensive models, and we demonstrate the generalization
-                capabilities of one such model trained on a subset of GraspFactory in both simulated and real-world
-                settings.
-              </p>
-            </div>
+    <!-- ================= Perception Pipeline Section ================= -->
+    <section class="section" id="perception-pipeline">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Perception Pipeline</h2>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/perception-pipeline.png" alt="Experiment Illustration">
+              <figcaption class="has-text-centered mt-2">
+                <em>Overview of the perception pipeline for real-world experiments.</em>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= Dataset Statistics Section ================= -->
-    <section class="section" id="dataset-stats">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Dataset Statistics</h2>
-            <div class="table-container">
-              <table class="table is-striped is-hoverable is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>Gripper</th>
-                    <th># of Objects</th>
-                    <th># of Good Grasps</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Franka Panda</td>
-                    <td>14,690</td>
-                    <td>12.2 million</td>
-                  </tr>
-                  <tr>
-                    <td>Robotiq 2F-85</td>
-                    <td>33,710</td>
-                    <td>97.1 million</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <!-- ================= Results of SE3-DiffusionFields trained on GraspFactory ================= -->
@@ -459,8 +486,8 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Video</h2>
             <div class="publication-video">
-              <iframe width="100%" height="480" src="https://www.youtube.com/embed/KkweJqG0f_E?si=iLcCjj1BLia5C9fe" frameborder="0"
-                allow="autoplay; encrypted-media; clipboard-write; fullscreen" allowfullscreen>
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/KkweJqG0f_E?si=iLcCjj1BLia5C9fe"
+                frameborder="0" allow="autoplay; encrypted-media; clipboard-write; fullscreen" allowfullscreen>
               </iframe>
             </div>
           </div>
@@ -498,6 +525,20 @@
         note      = {Non-archived workshop, URL: \url{https://sites.google.com/stanford.edu/corldata25/home}},
         year      = {2025}
       }
+        </code></pre>
+      </div>
+    </section>
+
+    <section class="section" id="References">
+      <div class="container is-max-desktop content">
+        <h2 class="title">References</h2>
+        <pre style="text-align: left;"><code>
+        [1] Urain, J., Funk, N., Peters, J., & Chalvatzaki, G. (2022). Se (3)-diffusionfields: Learning smooth cost functions for joint grasp and motion optimization through diffusion. arXiv preprint arXiv:2209.03855.
+
+        [2] Nguyen, V. N., Groueix, T., Ponimatkin, G., Lepetit, V., & Hodan, T. (2023). Cnos: A strong baseline for cad-based novel object segmentation. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 2134-2140).
+
+        [3] Wen, B., Yang, W., Kautz, J., & Birchfield, S. (2024). Foundationpose: Unified 6d pose estimation and tracking of novel objects. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 17868-17879).
+
         </code></pre>
       </div>
     </section>
