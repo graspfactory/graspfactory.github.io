@@ -165,3 +165,9 @@ body {
   opacity: 0.9;           /* subtle fade */
   cursor: pointer;        /* hand cursor */
 }
+
+.references p {
+  white-space: normal; /* allow wrapping */
+  text-align: left;
+  margin-bottom: 1em;
+}
