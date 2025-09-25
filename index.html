@@ -171,12 +171,13 @@
             <h2 class="title is-3"></h2>
             <div class="content has-text-justified">
               <p>
-                We introduce GraspFactory, a dataset containing over 109 million two-fingered 6-DoF grasps
-                collectively for the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with 33,710 objects).
-                GraspFactory is designed for training data-intensive models, and we demonstrate the generalization
-                capabilities of a model trained on the Franka Panda subset of GraspFactory in both simulated and
-                real-world
-                settings.
+                We introduce GraspFactory, an object-centric grasp dataset containing over 109 million two-fingered,
+                6-DoF grasps, collectively for the Franka Panda (with 14,690 objects) and Robotiq 2F85 grippers (with
+                33,710 objects). GraspFactory is designed for training data-intensive models, and we demonstrate the
+                generalization capabilities of a model, SE(3)-DiffusionFields, trained on the Franka Panda subset of
+                GraspFactory, in both simulated and real-world settings. To the best of our knowledge, this is the
+                largest object-centric grasping dataset containing 6-DoF, parallel-jaw grasps for geometrically diverse
+                3D data.
               </p>
             </div>
           </div>
@@ -274,7 +275,7 @@
             <h2 class="title is-3 has-text-centered">Generating the GraspFactory Dataset</h2>
 
             <p style="text-align: justify;">
-              Our dataset generation begins with a large collection of CAD models sourced from the ABC dataset. We
+              Our dataset generation begins with a large collection of CAD models sourced from the ABC dataset [1]. We
               selected 33,710 objects for the Robotiq 2F-85 gripper and 14,690 objects for the Franka Panda gripper.
               Candidate grasps are sampled on each object using an antipodal sampling method, where surface points and
               normals are used to determine potential finger contact locations. To increase coverage, we also apply mesh
@@ -307,60 +308,66 @@
     </section>
 
     <!-- ================= Simulation Environments Section ================= -->
-<section class="section" id="simulation-environments">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Simulation Environments</h2>
+    <section class="section" id="simulation-environments">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Simulation Environments</h2>
 
-    <div class="columns is-multiline is-centered">
+        <div class="columns is-multiline is-centered">
 
-      <!-- Collision Check -->
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="./static/images/collision-check-updated.png" alt="Collision check" style="width:100%; height:auto; border-radius: 6px;">
-          <figcaption style="margin-top: 0.5em; text-align: center;">
-            Collision check between an object and the gripper fingers using our internally developed robotics research software platform.
-          </figcaption>
-        </figure>
+          <!-- Collision Check -->
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="./static/images/collision-check-updated.png" alt="Collision check"
+                style="width:100%; height:auto; border-radius: 6px;">
+              <figcaption style="margin-top: 0.5em; text-align: center;">
+                Collision check between an object and the gripper fingers using our internally developed robotics
+                research software platform.
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Single Robot Grasp -->
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="./static/images/panda-robot.png" alt="Single robot grasp"
+                style="width:100%; height:auto; border-radius: 6px;">
+              <figcaption style="margin-top: 0.5em; text-align: center;">
+                Single robot executing a sampled grasp.
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Robotiq Evaluation -->
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="./static/images/robotiq-farm.png" alt="Robotiq 2F-85 evaluation"
+                style="width:100%; height:auto; border-radius: 6px;">
+              <figcaption style="margin-top: 0.5em; text-align: center;">
+                Isaac Sim evaluation environment with Robotiq 2F-85.
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Franka Panda Evaluation -->
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="./static/images/multiple-robot-updated.png" alt="Franka Panda evaluation"
+                style="width:100%; height:auto; border-radius: 6px;">
+              <figcaption style="margin-top: 0.5em; text-align: center;">
+                Isaac Sim evaluation environment with Franka Panda Robot with Panda Hand.
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top: 1em;">
+          Simulation environments for evaluating collision checks, sampled grasp execution, and physics-based
+          evaluation.
+        </p>
+
       </div>
-
-      <!-- Single Robot Grasp -->
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="./static/images/panda-robot.png" alt="Single robot grasp" style="width:100%; height:auto; border-radius: 6px;">
-          <figcaption style="margin-top: 0.5em; text-align: center;">
-            Single robot executing a sampled grasp.
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Robotiq Evaluation -->
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="./static/images/robotiq-farm.png" alt="Robotiq 2F-85 evaluation" style="width:100%; height:auto; border-radius: 6px;">
-          <figcaption style="margin-top: 0.5em; text-align: center;">
-            Isaac Sim evaluation environment with Robotiq 2F-85.
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Franka Panda Evaluation -->
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="./static/images/multiple-robot-updated.png" alt="Franka Panda evaluation" style="width:100%; height:auto; border-radius: 6px;">
-          <figcaption style="margin-top: 0.5em; text-align: center;">
-            Isaac Sim evaluation environment with Franka Panda Robot with Panda Hand.
-          </figcaption>
-        </figure>
-      </div>
-
-    </div>
-
-    <p style="text-align:center; margin-top: 1em;">
-      Simulation environments for evaluating collision checks, sampled grasp execution, and physics-based evaluation.
-    </p>
-
-  </div>
-</section>
+    </section>
 
 
 
@@ -373,8 +380,8 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Model Training</h2>
             <p style="text-align: justify;">
-              We trained the point cloud-based model proposed in SE(3)-DiffusionFields [1] using the Franka Panda Hand
-              subset of GraspFactory (Ours) and the ACRONYM [4] datasets. Training was conducted on two NVIDIA RTX-4090
+              We trained the point cloud-based model proposed in SE(3)-DiffusionFields [2] using the Franka Panda Hand
+              subset of GraspFactory (Ours) and the ACRONYM [3] datasets. Training was conducted on two NVIDIA RTX-4090
               GPUs with a
               batch size of 4 for 2,900 epochs, spanning a total of 19 days. We focused on the Franka Panda subset to
               align with the ACRONYM dataset, which also contains grasps specific to the Franka Panda gripper.
@@ -540,10 +547,10 @@
               style="max-width: 75%; margin: 0 auto; text-align: justify; line-height: 1.6;">
               Real-world grasping experiments demonstrating various objects and gripper poses. The objects shown here
               were
-              not included in the training set. The SE3-DiffusionFields [1] model was trained on the Franka Panda subset
+              not included in the training set. The SE3-DiffusionFields [2] model was trained on the Franka Panda subset
               of GraspFactory and evaluated on a Robotiq 2F-85 gripper. We employ the perception pipeline described in
-              the following section to estimate object poses from a single-view RGB-D image. CNOS [2] is used to segment
-              the target object from the RGB image, and FoundationPose [3] estimates its 6-DoF pose. Grasps that collide
+              the following section to estimate object poses from a single-view RGB-D image. CNOS [4] is used to segment
+              the target object from the RGB image, and FoundationPose [5] estimates its 6-DoF pose. Grasps that collide
               with the table are subsequently filtered out.
 
               <p>
@@ -658,21 +665,26 @@
       <div class="container is-max-desktop content">
         <h2 class="title">References</h2>
         <div class="references">
-          <p>[1] Urain, J., Funk, N., Peters, J., & Chalvatzaki, G. (2022). SE(3)-DiffusionFields: Learning smooth cost
+          <p>[1] Koch, S., Matveev, A., Jiang, Z., Williams, F., Artemov, A., Burnaev, E., Alexa, M., Zorin, D., &
+            Panozzo, D. (2019). ABC:
+            A big CAD model dataset for geometric deep learning. In <i>Proceedings of the IEEE/CVF Conference on
+              Computer Vision and Pattern Recognition</i> (pp. 9601-9611).
+
+          <p>[2] Urain, J., Funk, N., Peters, J., & Chalvatzaki, G. (2022). SE(3)-DiffusionFields: Learning smooth cost
             functions for joint grasp and motion optimization through diffusion. <i>arXiv preprint arXiv:2209.03855.</i>
           </p>
 
-          <p>[2] Nguyen, V. N., Groueix, T., Ponimatkin, G., Lepetit, V., & Hodan, T. (2023). CNOS: A strong baseline
+          <p>[3] Eppner, C., Mousavian, A., & Fox, D. (2021, May). ACRONYM: A large-scale grasp dataset based on
+            simulation. In <i>2021 IEEE International Conference on Robotics and Automation (ICRA)</i> (pp. 6222-6227).
+          </p>
+
+          <p>[4] Nguyen, V. N., Groueix, T., Ponimatkin, G., Lepetit, V., & Hodan, T. (2023). CNOS: A strong baseline
             for cad-based novel object segmentation. In <i>Proceedings of the IEEE/CVF International Conference on
               Computer Vision</i> (pp. 2134-2140).</p>
 
-          <p>[3] Wen, B., Yang, W., Kautz, J., & Birchfield, S. (2024). FoundationPose: Unified 6d pose estimation and
+          <p>[5] Wen, B., Yang, W., Kautz, J., & Birchfield, S. (2024). FoundationPose: Unified 6d pose estimation and
             tracking of novel objects. In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
               Recognition</i> (pp. 17868-17879).</p>
-
-          <p>[4] Eppner, C., Mousavian, A., & Fox, D. (2021, May). ACRONYM: A large-scale grasp dataset based on
-            simulation. In <i>2021 IEEE International Conference on Robotics and Automation (ICRA)</i> (pp. 6222-6227).
-          </p>
         </div>
       </div>
     </section>
